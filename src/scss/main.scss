@@ -1,0 +1,208 @@
+@import "./vendor/normalize.css";
+
+/*! grid.css v1.0.0 | MIT License | github.com/jberghoef */
+
+@import "constants";
+@import "variables";
+@import "mixins";
+@import "utils";
+
+/* TODO:
+
+ - Figure out a clever way to use area's
+ - Research functions for longer loops
+
+*/
+
+.container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 100%;
+
+  @each $name, $value in $breakpoint {
+    @include breakpoint-up($name) {
+      max-width: map-get($container, $name);
+    }
+  }
+
+  &.-fluid {
+    max-width: unset;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat($col-range, $col-definition);
+  grid-template-rows: auto;
+  grid-column-gap: $col-gap;
+  grid-row-gap: $row-gap;
+
+  &.-inline {
+    display: inline-grid;
+  }
+
+  &.-blank {
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+  }
+
+  @for $i from 0 through $gap-range {
+    &.-col-gap-#{$i} {
+      grid-column-gap: map-get($spacing, $i);
+    }
+  }
+
+  @for $i from 0 through $gap-range {
+    &.-row-gap-#{$i} {
+      grid-row-gap: map-get($spacing, $i);
+    }
+  }
+
+  @for $i from 1 through $col-range {
+    &.-cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, $col-definition);
+    }
+  }
+
+  @for $i from 1 through $row-range {
+    &.-rows-#{$i} {
+      grid-template-rows: repeat(#{$i}, $row-definition);
+    }
+  }
+
+  @each $name, $value in $auto-flow {
+    &.-flow-#{$name} {
+      grid-auto-flow: $value;
+    }
+  }
+
+  @each $bp, $value in $breakpoint {
+    @include breakpoint-up($bp) {
+      @for $i from 0 through $gap-range {
+        &.-col-gap-#{$bp}-#{$i} {
+          grid-column-gap: map-get($spacing, $i);
+        }
+
+        &.-row-gap-#{$bp}-#{$i} {
+          grid-row-gap: map-get($spacing, $i);
+        }
+      }
+
+      @for $i from 1 through $col-range {
+        &.-cols-#{$bp}-#{$i} {
+          grid-template-columns: repeat(#{$i}, $col-definition);
+        }
+      }
+
+      @for $i from 1 through $row-range {
+        &.-rows-#{$bp}-#{$i} {
+          grid-template-rows: repeat(#{$i}, $row-definition);
+        }
+      }
+
+      @each $name, $value in $auto-flow {
+        &.-flow-#{$bp}-#{$name} {
+          grid-auto-flow: $value;
+        }
+      }
+    }
+  }
+}
+
+.grid__item {
+  // TODO: Remove.
+  background-color: #eee;
+
+  @for $i from 1 through $col-range {
+    &.-col-start-#{$i} {
+      grid-column-start: $i;
+    }
+  }
+
+  @for $i from 1 through $col-range + 1 {
+    &.-col-end-#{$i} {
+      grid-column-end: $i;
+    }
+  }
+
+  @for $c1 from 1 through $col-range {
+    @for $c2 from 2 through $col-range + 1 {
+      @if $c1 < $c2 {
+        &.-col-#{$c1}-#{$c2} {
+          grid-column: #{$c1} / #{$c2};
+        }
+      }
+    }
+  }
+
+  @for $i from 1 through $row-range {
+    &.-row-start-#{$i} {
+      grid-row-start: $i;
+    }
+  }
+
+  @for $i from 1 through $row-range + 1 {
+    &.-row-end-#{$i} {
+      grid-row-end: $i;
+    }
+  }
+
+  @for $r1 from 1 through $row-range {
+    @for $r2 from 2 through $row-range + 1 {
+      @if $r1 < $r2 {
+        &.-row-#{$r1}-#{$r2} {
+          grid-row: #{$r1} / #{$r2};
+        }
+      }
+    }
+  }
+
+  @each $bp, $value in $breakpoint {
+    @include breakpoint-up($bp) {
+      @for $i from 1 through $col-range {
+        &.-col-#{$bp}-start-#{$i} {
+          grid-column-start: $i;
+        }
+      }
+
+      @for $i from 1 through $col-range + 1 {
+        &.-col-#{$bp}-end-#{$i} {
+          grid-column-end: $i;
+        }
+      }
+
+      @for $c1 from 1 through $col-range {
+        @for $c2 from 2 through $col-range + 1 {
+          @if $c1 < $c2 {
+            &.-col-#{$bp}-#{$c1}-#{$c2} {
+              grid-column: #{$c1} / #{$c2};
+            }
+          }
+        }
+      }
+
+      @for $i from 1 through $row-range {
+        &.-row-#{$bp}-start-#{$i} {
+          grid-row-start: $i;
+        }
+      }
+
+      @for $i from 1 through $row-range + 1 {
+        &.-row-#{$bp}-end-#{$i} {
+          grid-row-end: $i;
+        }
+      }
+
+      @for $r1 from 1 through $row-range {
+        @for $r2 from 2 through $row-range + 1 {
+          @if $r1 < $r2 {
+            &.-row-#{$bp}-#{$r1}-#{$r2} {
+              grid-row: #{$r1} / #{$r2};
+            }
+          }
+        }
+      }
+    }
+  }
+}

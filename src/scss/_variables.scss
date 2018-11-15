@@ -1,0 +1,33 @@
+$spacer: 1rem !default;
+$spacing: (
+  0: $spacer * 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer * 1,
+  4: $spacer * 1.5,
+  5: $spacer * 3
+) !default;
+
+$breakpoint: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$col-range: 12 !default;
+$col-definition: [col-start] 1fr [col-end] !default;
+
+$row-range: 3 !default;
+$row-definition: [row-start] auto [row-end] !default;
+
+$gap-range: 5 !default;
+$col-gap: $spacer * 2 !default;
+$row-gap: 0 !default;

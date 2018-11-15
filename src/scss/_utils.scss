@@ -1,0 +1,127 @@
+.d {
+  @include breakpoint-each() {
+    @each $value in $display {
+      &--#{$value} {
+        display: $value;
+      }
+    }
+  }
+}
+
+.j {
+  @include breakpoint-each() {
+    @each $value in $justify-items {
+      &-items--#{$value} {
+        justify-items: $value;
+      }
+
+      &-self--#{$value} {
+        justify-self: $value;
+      }
+    }
+
+    @each $value in $justify-content {
+      &-content--#{$value} {
+        justify-content: $value;
+      }
+    }
+  }
+}
+
+.a {
+  @include breakpoint-each() {
+    @each $value in $align-items {
+      &-items--#{$value} {
+        align-items: $value;
+      }
+
+      &-self--#{$value} {
+        align-self: $value;
+      }
+    }
+
+    @each $value in $align-content {
+      &-content--#{$value} {
+        align-content: $value;
+      }
+    }
+  }
+}
+
+.m {
+  @include breakpoint-each() {
+    @each $s in (t, b, l, r) {
+      &-#{$s} {
+        @each $i, $value in $spacing {
+          &-#{$i} {
+            margin-#{map-get($side, $s)}: map-get($spacing, $i);
+          }
+        }
+
+        &-auto {
+          margin-#{map-get($side, $s)}: auto;
+        }
+      }
+    }
+
+    &-x {
+      @each $i, $value in $spacing {
+        &-#{$i} {
+          margin-left: map-get($spacing, $i);
+          margin-right: map-get($spacing, $i);
+        }
+      }
+
+      &-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &-y {
+      @each $i, $value in $spacing {
+        &-#{$i} {
+          margin-top: map-get($spacing, $i);
+          margin-bottom: map-get($spacing, $i);
+        }
+      }
+
+      &-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+}
+
+.p {
+  @include breakpoint-each() {
+    @each $s in (t, b, l, r) {
+      &-#{$s} {
+        @each $i, $value in $spacing {
+          &-#{$i} {
+            padding-#{map-get($side, $s)}: map-get($spacing, $i);
+          }
+        }
+      }
+    }
+
+    &-x {
+      @each $i, $value in $spacing {
+        &-#{$i} {
+          padding-left: map-get($spacing, $i);
+          padding-right: map-get($spacing, $i);
+        }
+      }
+    }
+
+    &-y {
+      @each $i, $value in $spacing {
+        &-#{$i} {
+          padding-top: map-get($spacing, $i);
+          padding-bottom: map-get($spacing, $i);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+$justify-items: (start, end, center, stretch) !default;
+$align-items: $justify-items !default;
+
+$justify-content: (
+  start,
+  end,
+  center,
+  stretch,
+  space-around,
+  space-between,
+  space-evenly
+) !default;
+$align-content: $justify-content !default;
+
+$auto-flow: (
+  row: row,
+  column: column,
+  row-dense: row dense,
+  column-dense: column dense
+) !default;
+
+$display: (
+  none,
+  inline,
+  inline-block,
+  block,
+  table,
+  table-cell,
+  table-row,
+  flex,
+  inline-flex
+) !default;
+
+$side: (
+  t: top,
+  b: bottom,
+  l: left,
+  r: right
+);
