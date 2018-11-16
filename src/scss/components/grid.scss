@@ -1,7 +1,9 @@
 .grid {
   display: grid;
   grid-template-columns: repeat($col-range, $col-definition);
+  grid-auto-columns: $col-definition;
   grid-template-rows: auto;
+  grid-auto-rows: $row-definition;
   grid-column-gap: $col-gap;
   grid-row-gap: $row-gap;
 
