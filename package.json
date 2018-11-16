@@ -1,10 +1,10 @@
 {
   "name": "grid",
   "version": "1.0.0",
-  "main": "src/scss/main.scss",
-  "style": "src/scss/main.scss",
+  "main": "src/js/main.js",
+  "style": "src/js/main.js",
   "files": [
-    "src/scss/**/*"
+    "src/**/*"
   ],
   "license": "MIT",
   "scripts": {
