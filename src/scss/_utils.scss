@@ -73,10 +73,12 @@
 }
 
 .m {
-  @include breakpoint-each() {
-    @each $s in (t, b, l, r) {
-      &#{$s} {
-        @each $i, $value in $spacing {
+  @each $s in (t, b, l, r) {
+    &#{$s} {
+      @include breakpoint-each() {
+
+        @each $i,
+        $value in $spacing {
           &-#{$i} {
             margin-#{map-get($side, $s)}: map-get($spacing, $i);
           }
@@ -87,9 +89,13 @@
         }
       }
     }
+  }
 
-    &x {
-      @each $i, $value in $spacing {
+  &x {
+    @include breakpoint-each() {
+
+      @each $i,
+      $value in $spacing {
         &-#{$i} {
           margin-left: map-get($spacing, $i);
           margin-right: map-get($spacing, $i);
@@ -101,9 +107,13 @@
         margin-right: auto;
       }
     }
+  }
 
-    &y {
-      @each $i, $value in $spacing {
+  &y {
+    @include breakpoint-each() {
+
+      @each $i,
+      $value in $spacing {
         &-#{$i} {
           margin-top: map-get($spacing, $i);
           margin-bottom: map-get($spacing, $i);
@@ -118,29 +128,40 @@
   }
 }
 
+
 .p {
-  @include breakpoint-each() {
-    @each $s in (t, b, l, r) {
-      &#{$s} {
-        @each $i, $value in $spacing {
+  @each $s in (t, b, l, r) {
+    &#{$s} {
+      @include breakpoint-each() {
+
+        @each $i,
+        $value in $spacing {
           &-#{$i} {
             padding-#{map-get($side, $s)}: map-get($spacing, $i);
           }
         }
       }
     }
+  }
 
-    &x {
-      @each $i, $value in $spacing {
+  &x {
+    @include breakpoint-each() {
+
+      @each $i,
+      $value in $spacing {
         &-#{$i} {
           padding-left: map-get($spacing, $i);
           padding-right: map-get($spacing, $i);
         }
       }
     }
+  }
 
-    &y {
-      @each $i, $value in $spacing {
+  &y {
+    @include breakpoint-each() {
+
+      @each $i,
+      $value in $spacing {
         &-#{$i} {
           padding-top: map-get($spacing, $i);
           padding-bottom: map-get($spacing, $i);

@@ -1,7 +1,4 @@
 .grid__item {
-  // TODO: Remove.
-  background-color: #eee;
-
   &.-col {
     @include breakpoint-each() {
       @for $i from 1 through $col-range {
@@ -17,10 +14,10 @@
       }
 
       @for $c1 from 1 through $col-range {
-        @for $c2 from 2 through $col-range + 1 {
+        @for $c2 from 2 through $col-range {
           @if $c1 < $c2 {
             &-#{$c1}-#{$c2} {
-              grid-column: #{$c1} / #{$c2};
+              grid-column: #{$c1} / span #{$c2};
             }
           }
         }
@@ -43,10 +40,10 @@
       }
 
       @for $r1 from 1 through $row-range {
-        @for $r2 from 2 through $row-range + 1 {
+        @for $r2 from 2 through $row-range {
           @if $r1 < $r2 {
             &-#{$r1}-#{$r2} {
-              grid-row: #{$r1} / #{$r2};
+              grid-row: #{$r1} / span #{$r2};
             }
           }
         }
