@@ -41,20 +41,32 @@
 }
 
 .a {
-  @include breakpoint-each() {
-    @each $value in $align-items {
-      &-items--#{$value} {
-        align-items: $value;
-      }
-
-      &-self--#{$value} {
-        align-self: $value;
+  &-items {
+    @include breakpoint-each() {
+      @each $value in $align-items {
+        &--#{$value} {
+          align-items: $value;
+        }
       }
     }
+  }
 
-    @each $value in $align-content {
-      &-content--#{$value} {
-        align-content: $value;
+  &-self {
+    @include breakpoint-each() {
+      @each $value in $align-items {
+        &--#{$value} {
+          align-self: $value;
+        }
+      }
+    }
+  }
+
+  &-content {
+    @include breakpoint-each() {
+      @each $value in $align-content {
+        &--#{$value} {
+          align-content: $value;
+        }
       }
     }
   }
