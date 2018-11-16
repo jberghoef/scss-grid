@@ -10,9 +10,7 @@
     "watch": "parcel watch ./src/index.html"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "make pre-commit"
-    }
+    "hooks": {}
   },
   "devDependencies": {
     "husky": "^1.1.4",
