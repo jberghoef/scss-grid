@@ -1,7 +1,8 @@
 {
   "name": "grid",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main.scss",
+  "style": "src/main.scss",
   "license": "MIT",
   "scripts": {
     "dev": "parcel ./src/index.html",
