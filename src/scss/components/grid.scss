@@ -43,6 +43,16 @@
           grid-template-columns: repeat(#{$i}, $col-definition);
         }
       }
+
+      @for $f1 from 1 through $fraction-range {
+        @for $f2 from 1 through $fraction-range {
+          @if $f1 != $f2 and $f1 + $f2 <= $fraction-range {
+            &-#{$f1}-#{$f2} {
+              grid-template-columns: [col-start] #{$f1}fr [col-end col-start] #{$f2}fr [col-end];
+            }
+          }
+        }
+      }
     }
   }
 

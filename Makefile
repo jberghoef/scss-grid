@@ -1,4 +1,4 @@
 pre-commit:
-	rm -rf dist
-	yarn build
-	git add ./dist --force
+	rm -rf docs
+	yarn docs
+	git add ./docs --force

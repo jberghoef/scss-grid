@@ -22,6 +22,8 @@ $container: (
   xl: 1140px
 ) !default;
 
+$fraction-range: 4;
+
 $col-range: 12 !default;
 $col-definition: [col-start] 1fr [col-end] !default;
 
