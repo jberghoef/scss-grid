@@ -1,0 +1,16 @@
+.container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 100%;
+
+  @each $name, $value in $breakpoint {
+    @include breakpoint-up($name) {
+      max-width: map-get($container, $name);
+    }
+  }
+
+  &.-fluid {
+    max-width: unset;
+  }
+}

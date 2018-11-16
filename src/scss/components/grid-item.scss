@@ -1,0 +1,56 @@
+.grid__item {
+  // TODO: Remove.
+  background-color: #eee;
+
+  &.-col {
+    @include breakpoint-each() {
+      @for $i from 1 through $col-range {
+        &-start-#{$i} {
+          grid-column-start: $i;
+        }
+      }
+
+      @for $i from 1 through $col-range + 1 {
+        &-end-#{$i} {
+          grid-column-end: $i;
+        }
+      }
+
+      @for $c1 from 1 through $col-range {
+        @for $c2 from 2 through $col-range + 1 {
+          @if $c1 < $c2 {
+            &-#{$c1}-#{$c2} {
+              grid-column: #{$c1} / #{$c2};
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.-row {
+    @include breakpoint-each() {
+      @for $i from 1 through $row-range {
+        &-start-#{$i} {
+          grid-row-start: $i;
+        }
+      }
+
+      @for $i from 1 through $row-range + 1 {
+        &-end-#{$i} {
+          grid-row-end: $i;
+        }
+      }
+
+      @for $r1 from 1 through $row-range {
+        @for $r2 from 2 through $row-range + 1 {
+          @if $r1 < $r2 {
+            &-#{$r1}-#{$r2} {
+              grid-row: #{$r1} / #{$r2};
+            }
+          }
+        }
+      }
+    }
+  }
+}

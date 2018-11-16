@@ -9,20 +9,32 @@
 }
 
 .j {
-  @include breakpoint-each() {
-    @each $value in $justify-items {
-      &-items--#{$value} {
-        justify-items: $value;
-      }
-
-      &-self--#{$value} {
-        justify-self: $value;
+  &-items {
+    @include breakpoint-each() {
+      @each $value in $justify-items {
+        &--#{$value} {
+          justify-items: $value;
+        }
       }
     }
+  }
 
-    @each $value in $justify-content {
-      &-content--#{$value} {
-        justify-content: $value;
+  &-self {
+    @include breakpoint-each() {
+      @each $value in $justify-items {
+        &--#{$value} {
+          justify-self: $value;
+        }
+      }
+    }
+  }
+
+  &-content {
+    @include breakpoint-each() {
+      @each $value in $justify-content {
+        &--#{$value} {
+          justify-content: $value;
+        }
       }
     }
   }
@@ -51,7 +63,7 @@
 .m {
   @include breakpoint-each() {
     @each $s in (t, b, l, r) {
-      &-#{$s} {
+      &#{$s} {
         @each $i, $value in $spacing {
           &-#{$i} {
             margin-#{map-get($side, $s)}: map-get($spacing, $i);
@@ -64,7 +76,7 @@
       }
     }
 
-    &-x {
+    &x {
       @each $i, $value in $spacing {
         &-#{$i} {
           margin-left: map-get($spacing, $i);
@@ -78,7 +90,7 @@
       }
     }
 
-    &-y {
+    &y {
       @each $i, $value in $spacing {
         &-#{$i} {
           margin-top: map-get($spacing, $i);
@@ -97,7 +109,7 @@
 .p {
   @include breakpoint-each() {
     @each $s in (t, b, l, r) {
-      &-#{$s} {
+      &#{$s} {
         @each $i, $value in $spacing {
           &-#{$i} {
             padding-#{map-get($side, $s)}: map-get($spacing, $i);
@@ -106,7 +118,7 @@
       }
     }
 
-    &-x {
+    &x {
       @each $i, $value in $spacing {
         &-#{$i} {
           padding-left: map-get($spacing, $i);
@@ -115,7 +127,7 @@
       }
     }
 
-    &-y {
+    &y {
       @each $i, $value in $spacing {
         &-#{$i} {
           padding-top: map-get($spacing, $i);

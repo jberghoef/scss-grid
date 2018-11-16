@@ -1,0 +1,66 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat($col-range, $col-definition);
+  grid-template-rows: auto;
+  grid-column-gap: $col-gap;
+  grid-row-gap: $row-gap;
+
+  &.-inline {
+    display: inline-grid;
+  }
+
+  &.-blank {
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+  }
+
+  &.-col-gap {
+    @include breakpoint-each() {
+      @for $i from 0 through $gap-range {
+        &-#{$i} {
+          grid-column-gap: map-get($spacing, $i);
+        }
+      }
+    }
+  }
+
+  &.-row-gap {
+    @include breakpoint-each() {
+      @for $i from 0 through $gap-range {
+        &-#{$i} {
+          grid-row-gap: map-get($spacing, $i);
+        }
+      }
+    }
+  }
+
+  &.-cols {
+    @include breakpoint-each() {
+      @for $i from 1 through $col-range {
+        &-#{$i} {
+          grid-template-columns: repeat(#{$i}, $col-definition);
+        }
+      }
+    }
+  }
+
+  &.-rows {
+    @include breakpoint-each() {
+      @for $i from 1 through $row-range {
+        &-#{$i} {
+          grid-template-rows: repeat(#{$i}, $row-definition);
+        }
+      }
+    }
+  }
+
+  &.-flow {
+    @include breakpoint-each() {
+      @each $name, $value in $auto-flow {
+        &-#{$name} {
+          grid-auto-flow: $value;
+        }
+      }
+    }
+  }
+}
