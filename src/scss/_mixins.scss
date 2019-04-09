@@ -1,21 +1,38 @@
+////
+/// @author Jasper Berghoef
+////
+
+
+/// @group Container
+/// @param {string} $bp - The breakpoint to use the minimal width of.
+/// @content The content that will be encapsulated in the media query.
 @mixin breakpoint-up($bp) {
   @media only screen and (min-width: map-get($breakpoint, $bp)) {
     @content;
   }
 }
 
+/// @group Container
+/// @param {string} $bp - The breakpoint to use the maximum width of.
+/// @content The content that will be encapsulated in the media query.
 @mixin breakpoint-down($bp) {
   @media only screen and (max-width: map-get($breakpoint, $bp) - 0.1px) {
     @content;
   }
 }
 
+/// @group Container
+/// @param {string} $bp-min - The breakpoint to use the minimum width of.
+/// @param {string} $bp-max - The breakpoint to use the maximum width of.
+/// @content The content that will be encapsulated in the media query.
 @mixin breakpoint-between($bp-min, $bp-max) {
   @media only screen and (min-width: map-get($breakpoint, $bp-min)) and (max-width: map-get($breakpoint, $bp-max) - 0.1px) {
     @content;
   }
 }
 
+/// @group Container
+/// @content The content that will be encapsulated in the media query.
 @mixin breakpoint-each() {
   @content;
 

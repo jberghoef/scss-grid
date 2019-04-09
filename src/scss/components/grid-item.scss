@@ -1,4 +1,17 @@
+////
+/// @author Jasper Berghoef
+/// @group Grid
+////
+
+
+/// @example markup
+/// <div class="grid__item"></div>
+///
 .grid__item {
+  /// @example markup
+  /// <div class="grid__item -col-2-3 -col-xl-2-6"></div>
+  /// <div class="grid__item -col-start-2 -col-lg-start-3 -col-end-3 -col-lg-end-4"></div>
+  ///
   &.-col {
     @include breakpoint-each() {
       @for $i from 1 through $col-range {
@@ -25,6 +38,10 @@
     }
   }
 
+  /// @example markup
+  /// <div class="grid__item -row-1-2 -row-lg-1-4"></div>
+  /// <div class="grid__item -row-start-1 -row-xl-start-2 -row-end-2 -row-xl-end-3"></div>
+  ///
   &.-row {
     @include breakpoint-each() {
       @for $i from 1 through $row-range {

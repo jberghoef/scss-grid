@@ -1,3 +1,18 @@
+////
+/// @author Jasper Berghoef
+/// @group Grid
+////
+
+
+/// @see $col-range
+/// @see $col-definition
+/// @see $col-gap
+/// @see $row-range
+/// @see $row-definition
+/// @see $row-gap
+/// @example markup
+///   <div class="grid"></div>
+///
 .grid {
   display: grid;
   grid-template-columns: repeat($col-range, $col-definition);
@@ -7,15 +22,26 @@
   grid-column-gap: $col-gap;
   grid-row-gap: $row-gap;
 
+  /// @example markup
+  ///   <div class="grid -inline"></div>
+  ///
   &.-inline {
     display: inline-grid;
   }
 
+  /// @example markup
+  ///   <div class="grid -blank"></div>
+  ///
   &.-blank {
     grid-template-columns: unset;
     grid-template-rows: unset;
   }
 
+  /// @see $gap-range
+  /// @see $spacing
+  /// @example markup
+  ///   <div class="grid -col-gap-1 -col-gap-sm-2 -col-gap-md-3 -col-gap-lg-4 -col-gap-xl-5"></div>
+  ///
   &.-col-gap {
     @include breakpoint-each() {
       @for $i from 0 through $gap-range {
@@ -26,6 +52,11 @@
     }
   }
 
+  /// @see $gap-range
+  /// @see $spacing
+  /// @example markup
+  ///   <div class="grid -row-gap-1 -row-gap-sm-2 -row-gap-md-3 -row-gap-lg-4 -row-gap-xl-5"></div>
+  ///
   &.-row-gap {
     @include breakpoint-each() {
       @for $i from 0 through $gap-range {
@@ -36,6 +67,12 @@
     }
   }
 
+  /// @see $col-range
+  /// @see $col-definition
+  /// @see $fraction-range
+  /// @example markup
+  ///   <div class="grid -cols-1 -cols-sm-2 -cols-md-4 -cols-lg-6 -cols-xl-12"></div>
+  ///
   &.-cols {
     @include breakpoint-each() {
       @for $i from 1 through $col-range {
@@ -56,6 +93,11 @@
     }
   }
 
+  /// @see $row-range
+  /// @see $row-definition
+  /// @example markup
+  ///   <div class="grid -rows-1 -row-md-2 -row-xl-3"></div>
+  ///
   &.-rows {
     @include breakpoint-each() {
       @for $i from 1 through $row-range {
@@ -66,6 +108,10 @@
     }
   }
 
+  /// @see $auto-flow
+  /// @example markup
+  ///   <div class="grid -flow-column-dense -flow-lg-column"></div>
+  ///
   &.-flow {
     @include breakpoint-each() {
       @each $name, $value in $auto-flow {

@@ -1,4 +1,12 @@
+////
+/// @author Jasper Berghoef
+////
+
+
+/// Default spacing value.
 $spacer: 1rem !default;
+
+/// Spacing modifiers.
 $spacing: (
   0: $spacer * 0,
   1: $spacer * 0.25,
@@ -8,6 +16,9 @@ $spacing: (
   5: $spacer * 3
 ) !default;
 
+
+/// Container breakpoints.
+/// @group Container
 $breakpoint: (
   sm: 576px,
   md: 768px,
@@ -15,6 +26,8 @@ $breakpoint: (
   xl: 1200px
 ) !default;
 
+/// Container widths.
+/// @group Container
 $container: (
   sm: 540px,
   md: 720px,
@@ -22,14 +35,35 @@ $container: (
   xl: 1140px
 ) !default;
 
+
+/// The amount of fractions to create.
+/// @group Grid
 $fraction-range: 4;
 
+/// The amount of columns to create.
+/// @group Grid
 $col-range: 12 !default;
+
+/// The default column definition.
+/// @group Grid
 $col-definition: [col-start] 1fr [col-end] !default;
 
+/// The amount of rows to create.
+/// @group Grid
 $row-range: 3 !default;
+
+/// The default row definition.
+/// @group Grid
 $row-definition: [row-start] auto [row-end] !default;
 
+/// The amount of gap modifiers to create.
+/// @group Grid
 $gap-range: 5 !default;
+
+/// The default column gap.
+/// @group Grid
 $col-gap: $spacer * 2 !default;
+
+/// The default row gap.
+/// @group Grid
 $row-gap: 0 !default;

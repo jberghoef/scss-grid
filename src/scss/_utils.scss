@@ -1,3 +1,10 @@
+////
+/// @author Jasper Berghoef
+////
+
+
+/// @group Utils
+/// @see $display
 .d {
   @include breakpoint-each() {
     @each $value in $display {
@@ -8,6 +15,9 @@
   }
 }
 
+/// @group Utils
+/// @see $justify-items
+/// @see $justify-content
 .j {
   &-items {
     @include breakpoint-each() {
@@ -40,6 +50,9 @@
   }
 }
 
+/// @group Utils
+/// @see $align-items
+/// @see $align-content
 .a {
   &-items {
     @include breakpoint-each() {
@@ -72,6 +85,9 @@
   }
 }
 
+/// @group Utils
+/// @see $spacing
+/// @see $side
 .m {
   @each $s in (t, b, l, r) {
     &#{$s} {
@@ -128,7 +144,9 @@
   }
 }
 
-
+/// @group Utils
+/// @see $spacing
+/// @see $side
 .p {
   @each $s in (t, b, l, r) {
     &#{$s} {

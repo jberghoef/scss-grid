@@ -1,7 +1,16 @@
+////
+/// @author Jasper Berghoef
+/// @group Container
+////
+
+
+/// @example markup
+///   <div class="container"></div>
+///
 .container {
   box-sizing: content-box;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 calc(#{$spacer} * 2);
   max-width: 100%;
 
   @each $name, $value in $breakpoint {
@@ -10,6 +19,9 @@
     }
   }
 
+  /// @example markup
+  ///   <div class="container -fluid"></div>
+  ///
   &.-fluid {
     max-width: unset;
   }

@@ -1,6 +1,18 @@
-$justify-items: (start, end, center, stretch) !default;
-$align-items: $justify-items !default;
+////
+/// Constants. Not ment to be overwritten.
+/// Mainly used for Sass logic.
+/// @author Jasper Berghoef
+////
 
+
+///
+$justify-items: (start, end, center, stretch);
+
+///
+$align-items: $justify-items;
+
+
+///
 $justify-content: (
   start,
   end,
@@ -9,16 +21,22 @@ $justify-content: (
   space-around,
   space-between,
   space-evenly
-) !default;
-$align-content: $justify-content !default;
+);
 
+///
+$align-content: $justify-content;
+
+
+///
 $auto-flow: (
   row: row,
   column: column,
   row-dense: row dense,
   column-dense: column dense
-) !default;
+);
 
+
+///
 $display: (
   none,
   inline,
@@ -29,8 +47,10 @@ $display: (
   table-row,
   flex,
   inline-flex
-) !default;
+);
 
+
+///
 $side: (
   t: top,
   b: bottom,
