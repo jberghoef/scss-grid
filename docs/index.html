@@ -1,0 +1,523 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Grid - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Grid - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Grid - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="container"><a href="#container">container</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="container-mixin"><a href="#container-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="container" data-name="breakpoint-up" data-type="mixin"><a href="#container-mixin-breakpoint-up">breakpoint-up</a></li><li class="sidebar__item sassdoc__item" data-group="container" data-name="breakpoint-down" data-type="mixin"><a href="#container-mixin-breakpoint-down">breakpoint-down</a></li><li class="sidebar__item sassdoc__item" data-group="container" data-name="breakpoint-between" data-type="mixin"><a href="#container-mixin-breakpoint-between">breakpoint-between</a></li><li class="sidebar__item sassdoc__item" data-group="container" data-name="breakpoint-each" data-type="mixin"><a href="#container-mixin-breakpoint-each">breakpoint-each</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="container-variable"><a href="#container-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="container" data-name="breakpoint" data-type="variable"><a href="#container-variable-breakpoint">breakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="container" data-name="container" data-type="variable"><a href="#container-variable-container">container</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="container-css"><a href="#container-css">css</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="container" data-name=".container" data-type="css"><a href="#container-css-.container">.container</a></li><li class="sidebar__item sassdoc__item" data-group="container" data-name="&amp;.-fluid" data-type="css"><a href="#container-css-&amp;.-fluid">&amp;.-fluid</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="grid"><a href="#grid">grid</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="grid-variable"><a href="#grid-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="grid" data-name="fraction-range" data-type="variable"><a href="#grid-variable-fraction-range">fraction-range</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="col-range" data-type="variable"><a href="#grid-variable-col-range">col-range</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="col-definition" data-type="variable"><a href="#grid-variable-col-definition">col-definition</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="row-range" data-type="variable"><a href="#grid-variable-row-range">row-range</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="row-definition" data-type="variable"><a href="#grid-variable-row-definition">row-definition</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="gap-range" data-type="variable"><a href="#grid-variable-gap-range">gap-range</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="col-gap" data-type="variable"><a href="#grid-variable-col-gap">col-gap</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="row-gap" data-type="variable"><a href="#grid-variable-row-gap">row-gap</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="grid-css"><a href="#grid-css">css</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="grid" data-name=".grid__item" data-type="css"><a href="#grid-css-.grid__item">.grid__item</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-col" data-type="css"><a href="#grid-css-&amp;.-col">&amp;.-col</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-row" data-type="css"><a href="#grid-css-&amp;.-row">&amp;.-row</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name=".grid" data-type="css"><a href="#grid-css-.grid">.grid</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-inline" data-type="css"><a href="#grid-css-&amp;.-inline">&amp;.-inline</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-blank" data-type="css"><a href="#grid-css-&amp;.-blank">&amp;.-blank</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-col-gap" data-type="css"><a href="#grid-css-&amp;.-col-gap">&amp;.-col-gap</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-row-gap" data-type="css"><a href="#grid-css-&amp;.-row-gap">&amp;.-row-gap</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-cols" data-type="css"><a href="#grid-css-&amp;.-cols">&amp;.-cols</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-rows" data-type="css"><a href="#grid-css-&amp;.-rows">&amp;.-rows</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="&amp;.-flow" data-type="css"><a href="#grid-css-&amp;.-flow">&amp;.-flow</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-variable"><a href="#undefined-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="justify-items" data-type="variable"><a href="#undefined-variable-justify-items">justify-items</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="align-items" data-type="variable"><a href="#undefined-variable-align-items">align-items</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="justify-content" data-type="variable"><a href="#undefined-variable-justify-content">justify-content</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="align-content" data-type="variable"><a href="#undefined-variable-align-content">align-content</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="auto-flow" data-type="variable"><a href="#undefined-variable-auto-flow">auto-flow</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="display" data-type="variable"><a href="#undefined-variable-display">display</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="side" data-type="variable"><a href="#undefined-variable-side">side</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="spacer" data-type="variable"><a href="#undefined-variable-spacer">spacer</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="spacing" data-type="variable"><a href="#undefined-variable-spacing">spacing</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="utils"><a href="#utils">utils</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="utils-css"><a href="#utils-css">css</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="utils" data-name=".d" data-type="css"><a href="#utils-css-.d">.d</a></li><li class="sidebar__item sassdoc__item" data-group="utils" data-name=".j" data-type="css"><a href="#utils-css-.j">.j</a></li><li class="sidebar__item sassdoc__item" data-group="utils" data-name=".a" data-type="css"><a href="#utils-css-.a">.a</a></li><li class="sidebar__item sassdoc__item" data-group="utils" data-name=".m" data-type="css"><a href="#utils-css-.m">.m</a></li><li class="sidebar__item sassdoc__item" data-group="utils" data-name=".p" data-type="css"><a href="#utils-css-.p">.p</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="container"><div class="container">container</div></h1><section class="main__sub-section" id="container-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="container-mixin-breakpoint-up"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-up">breakpoint-up</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-up($bp) { 
+  @media only screen and (min-width: map-get($breakpoint, $bp)) {
+    @content;
+  }
+ }" data-collapsed="@mixin breakpoint-up($bp) { ... }"><code>@mixin breakpoint-up($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>The breakpoint to use the minimal width of.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive). Role: The content that will be encapsulated in the media query.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#container-variable-breakpoint"><code>breakpoint</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#container-mixin-breakpoint-each"><code>breakpoint-each</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="container-mixin-breakpoint-down"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-down">breakpoint-down</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-down($bp) { 
+  @media only screen and (max-width: map-get($breakpoint, $bp) - 0.1px) {
+    @content;
+  }
+ }" data-collapsed="@mixin breakpoint-down($bp) { ... }"><code>@mixin breakpoint-down($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>The breakpoint to use the maximum width of.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive). Role: The content that will be encapsulated in the media query.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#container-variable-breakpoint"><code>breakpoint</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="container-mixin-breakpoint-between"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-between">breakpoint-between</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-between($bp-min, $bp-max) { 
+  @media only screen and (min-width: map-get($breakpoint, $bp-min)) and (max-width: map-get($breakpoint, $bp-max) - 0.1px) {
+    @content;
+  }
+ }" data-collapsed="@mixin breakpoint-between($bp-min, $bp-max) { ... }"><code>@mixin breakpoint-between($bp-min, $bp-max) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp-min</code></th><td data-label="desc"><p>The breakpoint to use the minimum width of.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp-max</code></th><td data-label="desc"><p>The breakpoint to use the maximum width of.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive). Role: The content that will be encapsulated in the media query.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#container-variable-breakpoint"><code>breakpoint</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#container-variable-breakpoint"><code>breakpoint</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="container-mixin-breakpoint-each"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-each">breakpoint-each</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-each() { 
+  @content;
+
+  @each $bp, $value in $breakpoint {
+    @include breakpoint-up($bp) {
+      &amp;-#{$bp} {
+        @content;
+      }
+    }
+  }
+ }" data-collapsed="@mixin breakpoint-each() { ... }"><code>@mixin breakpoint-each() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive). Role: The content that will be encapsulated in the media query.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#container-mixin-breakpoint-up"><code>breakpoint-up</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#container-variable-breakpoint"><code>breakpoint</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section></section><section class="main__sub-section" id="container-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="container-variable-breakpoint"><h3 class="item__heading"><a class="item__name" href="#variable-breakpoint">breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$breakpoint: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Container breakpoints.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#container-mixin-breakpoint-up"><code>breakpoint-up</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#container-mixin-breakpoint-down"><code>breakpoint-down</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#container-mixin-breakpoint-between"><code>breakpoint-between</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#container-mixin-breakpoint-between"><code>breakpoint-between</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#container-mixin-breakpoint-each"><code>breakpoint-each</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="container-variable-container"><h3 class="item__heading"><a class="item__name" href="#variable-container">container</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$container: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Container widths.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section></section><section class="main__sub-section" id="container-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="container-css-.container"><h3 class="item__heading"><a class="item__name" href="#css-.container">.container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 calc(#{$spacer} * 2);
+  max-width: 100%;
+
+  @each $name, $value in $breakpoint {
+    @include breakpoint-up($name) {
+      max-width: map-get($container, $name);
+    }
+  }
+
+  /// @example markup
+  ///   &lt;div class=&quot;container -fluid&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-fluid {
+    max-width: unset;
+  }
+}</code>" data-collapsed=".container { ... }"><code>.container { ... }</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="container-css-&amp;.-fluid"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-fluid">&amp;.-fluid</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-fluid {
+  max-width: unset;
+}</code>" data-collapsed="&amp;.-fluid { ... }"><code>&amp;.-fluid { ... }</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;container -fluid&quot;&gt;&lt;/div&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="grid"><div class="container">grid</div></h1><section class="main__sub-section" id="grid-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="grid-variable-fraction-range"><h3 class="item__heading"><a class="item__name" href="#variable-fraction-range">fraction-range</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$fraction-range: 4;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The amount of fractions to create.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-variable-col-range"><h3 class="item__heading"><a class="item__name" href="#variable-col-range">col-range</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$col-range: 12 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The amount of columns to create.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-variable-col-definition"><h3 class="item__heading"><a class="item__name" href="#variable-col-definition">col-definition</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$col-definition: [col-start] 1fr [col-end] !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default column definition.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-variable-row-range"><h3 class="item__heading"><a class="item__name" href="#variable-row-range">row-range</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$row-range: 3 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The amount of rows to create.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-variable-row-definition"><h3 class="item__heading"><a class="item__name" href="#variable-row-definition">row-definition</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$row-definition: [row-start] auto [row-end] !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default row definition.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-variable-gap-range"><h3 class="item__heading"><a class="item__name" href="#variable-gap-range">gap-range</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$gap-range: 5 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The amount of gap modifiers to create.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-variable-col-gap"><h3 class="item__heading"><a class="item__name" href="#variable-col-gap">col-gap</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$col-gap: $spacer * 2 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default column gap.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-variable-row-gap"><h3 class="item__heading"><a class="item__name" href="#variable-row-gap">row-gap</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$row-gap: 0 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default row gap.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section></section><section class="main__sub-section" id="grid-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="grid-css-.grid__item"><h3 class="item__heading"><a class="item__name" href="#css-.grid__item">.grid__item</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.grid__item {
+  /// @example markup
+  /// &lt;div class=&quot;grid__item -col-2-3 -col-xl-2-6&quot;&gt;&lt;/div&gt;
+  /// &lt;div class=&quot;grid__item -col-start-2 -col-lg-start-3 -col-end-3 -col-lg-end-4&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-col {
+    @include breakpoint-each() {
+      @for $i from 1 through $col-range {
+        &amp;-start-#{$i} {
+          grid-column-start: $i;
+        }
+      }
+
+      @for $i from 1 through $col-range + 1 {
+        &amp;-end-#{$i} {
+          grid-column-end: $i;
+        }
+      }
+
+      @for $c1 from 1 through $col-range {
+        @for $c2 from 2 through $col-range {
+          @if $c1 &lt; $c2 {
+            &amp;-#{$c1}-#{$c2} {
+              grid-column: #{$c1} / span #{$c2};
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /// @example markup
+  /// &lt;div class=&quot;grid__item -row-1-2 -row-lg-1-4&quot;&gt;&lt;/div&gt;
+  /// &lt;div class=&quot;grid__item -row-start-1 -row-xl-start-2 -row-end-2 -row-xl-end-3&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-row {
+    @include breakpoint-each() {
+      @for $i from 1 through $row-range {
+        &amp;-start-#{$i} {
+          grid-row-start: $i;
+        }
+      }
+
+      @for $i from 1 through $row-range + 1 {
+        &amp;-end-#{$i} {
+          grid-row-end: $i;
+        }
+      }
+
+      @for $r1 from 1 through $row-range {
+        @for $r2 from 2 through $row-range {
+          @if $r1 &lt; $r2 {
+            &amp;-#{$r1}-#{$r2} {
+              grid-row: #{$r1} / span #{$r2};
+            }
+          }
+        }
+      }
+    }
+  }
+}</code>" data-collapsed=".grid__item { ... }"><code>.grid__item { ... }</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;grid__item&quot;&gt;&lt;/div&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-col"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-col">&amp;.-col</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-col {
+  @include breakpoint-each() {
+      @for $i from 1 through $col-range {
+        &amp;-start-#{$i} {
+          grid-column-start: $i;
+        }
+      }
+
+      @for $i from 1 through $col-range + 1 {
+        &amp;-end-#{$i} {
+          grid-column-end: $i;
+        }
+      }
+
+      @for $c1 from 1 through $col-range {
+        @for $c2 from 2 through $col-range {
+          @if $c1 &lt; $c2 {
+            &amp;-#{$c1}-#{$c2} {
+              grid-column: #{$c1} / span #{$c2};
+            }
+          }
+        }
+      }
+    }
+}</code>" data-collapsed="&amp;.-col { ... }"><code>&amp;.-col { ... }</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;grid__item -col-2-3 -col-xl-2-6&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;grid__item -col-start-2 -col-lg-start-3 -col-end-3 -col-lg-end-4&quot;&gt;&lt;/div&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-row"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-row">&amp;.-row</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-row {
+  @include breakpoint-each() {
+      @for $i from 1 through $row-range {
+        &amp;-start-#{$i} {
+          grid-row-start: $i;
+        }
+      }
+
+      @for $i from 1 through $row-range + 1 {
+        &amp;-end-#{$i} {
+          grid-row-end: $i;
+        }
+      }
+
+      @for $r1 from 1 through $row-range {
+        @for $r2 from 2 through $row-range {
+          @if $r1 &lt; $r2 {
+            &amp;-#{$r1}-#{$r2} {
+              grid-row: #{$r1} / span #{$r2};
+            }
+          }
+        }
+      }
+    }
+}</code>" data-collapsed="&amp;.-row { ... }"><code>&amp;.-row { ... }</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;grid__item -row-1-2 -row-lg-1-4&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;grid__item -row-start-1 -row-xl-start-2 -row-end-2 -row-xl-end-3&quot;&gt;&lt;/div&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-.grid"><h3 class="item__heading"><a class="item__name" href="#css-.grid">.grid</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.grid {
+  display: grid;
+  grid-template-columns: repeat($col-range, $col-definition);
+  grid-auto-columns: $col-definition;
+  grid-template-rows: auto;
+  grid-auto-rows: $row-definition;
+  grid-column-gap: $col-gap;
+  grid-row-gap: $row-gap;
+
+  /// @example markup
+  ///   &lt;div class=&quot;grid -inline&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-inline {
+    display: inline-grid;
+  }
+
+  /// @example markup
+  ///   &lt;div class=&quot;grid -blank&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-blank {
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+  }
+
+  /// @see $gap-range
+  /// @see $spacing
+  /// @example markup
+  ///   &lt;div class=&quot;grid -col-gap-1 -col-gap-sm-2 -col-gap-md-3 -col-gap-lg-4 -col-gap-xl-5&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-col-gap {
+    @include breakpoint-each() {
+      @for $i from 0 through $gap-range {
+        &amp;-#{$i} {
+          grid-column-gap: map-get($spacing, $i);
+        }
+      }
+    }
+  }
+
+  /// @see $gap-range
+  /// @see $spacing
+  /// @example markup
+  ///   &lt;div class=&quot;grid -row-gap-1 -row-gap-sm-2 -row-gap-md-3 -row-gap-lg-4 -row-gap-xl-5&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-row-gap {
+    @include breakpoint-each() {
+      @for $i from 0 through $gap-range {
+        &amp;-#{$i} {
+          grid-row-gap: map-get($spacing, $i);
+        }
+      }
+    }
+  }
+
+  /// @see $col-range
+  /// @see $col-definition
+  /// @see $fraction-range
+  /// @example markup
+  ///   &lt;div class=&quot;grid -cols-1 -cols-sm-2 -cols-md-4 -cols-lg-6 -cols-xl-12&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-cols {
+    @include breakpoint-each() {
+      @for $i from 1 through $col-range {
+        &amp;-#{$i} {
+          grid-template-columns: repeat(#{$i}, $col-definition);
+        }
+      }
+
+      @for $f1 from 1 through $fraction-range {
+        @for $f2 from 1 through $fraction-range {
+          @if $f1 != $f2 and $f1 + $f2 &lt;= $fraction-range {
+            &amp;-#{$f1}-#{$f2} {
+              grid-template-columns: [col-start] #{$f1}fr [col-end col-start] #{$f2}fr [col-end];
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /// @see $row-range
+  /// @see $row-definition
+  /// @example markup
+  ///   &lt;div class=&quot;grid -rows-1 -row-md-2 -row-xl-3&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-rows {
+    @include breakpoint-each() {
+      @for $i from 1 through $row-range {
+        &amp;-#{$i} {
+          grid-template-rows: repeat(#{$i}, $row-definition);
+        }
+      }
+    }
+  }
+
+  /// @see $auto-flow
+  /// @example markup
+  ///   &lt;div class=&quot;grid -flow-column-dense -flow-lg-column&quot;&gt;&lt;/div&gt;
+  ///
+  &amp;.-flow {
+    @include breakpoint-each() {
+      @each $name, $value in $auto-flow {
+        &amp;-#{$name} {
+          grid-auto-flow: $value;
+        }
+      }
+    }
+  }
+}</code>" data-collapsed=".grid { ... }"><code>.grid { ... }</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;grid&quot;&gt;&lt;/div&gt;</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-col-range"><code>col-range</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-col-definition"><code>col-definition</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-col-gap"><code>col-gap</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-row-range"><code>row-range</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-row-definition"><code>row-definition</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-row-gap"><code>row-gap</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-inline"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-inline">&amp;.-inline</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-inline {
+  display: inline-grid;
+}</code>" data-collapsed="&amp;.-inline { ... }"><code>&amp;.-inline { ... }</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;grid -inline&quot;&gt;&lt;/div&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-blank"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-blank">&amp;.-blank</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-blank {
+  grid-template-columns: unset;
+    grid-template-rows: unset;
+}</code>" data-collapsed="&amp;.-blank { ... }"><code>&amp;.-blank { ... }</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;grid -blank&quot;&gt;&lt;/div&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-col-gap"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-col-gap">&amp;.-col-gap</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-col-gap {
+  @include breakpoint-each() {
+      @for $i from 0 through $gap-range {
+        &amp;-#{$i} {
+          grid-column-gap: map-get($spacing, $i);
+        }
+      }
+    }
+}</code>" data-collapsed="&amp;.-col-gap { ... }"><code>&amp;.-col-gap { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-gap-range"><code>gap-range</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-row-gap"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-row-gap">&amp;.-row-gap</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-row-gap {
+  @include breakpoint-each() {
+      @for $i from 0 through $gap-range {
+        &amp;-#{$i} {
+          grid-row-gap: map-get($spacing, $i);
+        }
+      }
+    }
+}</code>" data-collapsed="&amp;.-row-gap { ... }"><code>&amp;.-row-gap { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-gap-range"><code>gap-range</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-cols"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-cols">&amp;.-cols</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-cols {
+  @include breakpoint-each() {
+      @for $i from 1 through $col-range {
+        &amp;-#{$i} {
+          grid-template-columns: repeat(#{$i}, $col-definition);
+        }
+      }
+
+      @for $f1 from 1 through $fraction-range {
+        @for $f2 from 1 through $fraction-range {
+          @if $f1 != $f2 and $f1 + $f2 &lt;= $fraction-range {
+            &amp;-#{$f1}-#{$f2} {
+              grid-template-columns: [col-start] #{$f1}fr [col-end col-start] #{$f2}fr [col-end];
+            }
+          }
+        }
+      }
+    }
+}</code>" data-collapsed="&amp;.-cols { ... }"><code>&amp;.-cols { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-col-range"><code>col-range</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-rows"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-rows">&amp;.-rows</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-rows {
+  @include breakpoint-each() {
+      @for $i from 1 through $row-range {
+        &amp;-#{$i} {
+          grid-template-rows: repeat(#{$i}, $row-definition);
+        }
+      }
+    }
+}</code>" data-collapsed="&amp;.-rows { ... }"><code>&amp;.-rows { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-row-range"><code>row-range</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="grid-css-&amp;.-flow"><h3 class="item__heading"><a class="item__name" href="#css-&amp;.-flow">&amp;.-flow</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>&amp;.-flow {
+  @include breakpoint-each() {
+      @each $name, $value in $auto-flow {
+        &amp;-#{$name} {
+          grid-auto-flow: $value;
+        }
+      }
+    }
+}</code>" data-collapsed="&amp;.-flow { ... }"><code>&amp;.-flow { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-auto-flow"><code>auto-flow</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="undefined-variable-justify-items"><h3 class="item__heading"><a class="item__name" href="#variable-justify-items">justify-items</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$justify-items: (start, end, center, stretch);</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="undefined-variable-align-items"><h3 class="item__heading"><a class="item__name" href="#variable-align-items">align-items</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$align-items: $justify-items;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="undefined-variable-justify-content"><h3 class="item__heading"><a class="item__name" href="#variable-justify-content">justify-content</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$justify-content: (
+  start,
+  end,
+  center,
+  stretch,
+  space-around,
+  space-between,
+  space-evenly
+);</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="undefined-variable-align-content"><h3 class="item__heading"><a class="item__name" href="#variable-align-content">align-content</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$align-content: $justify-content;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="undefined-variable-auto-flow"><h3 class="item__heading"><a class="item__name" href="#variable-auto-flow">auto-flow</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$auto-flow: (
+  row: row,
+  column: column,
+  row-dense: row dense,
+  column-dense: column dense
+);</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="undefined-variable-display"><h3 class="item__heading"><a class="item__name" href="#variable-display">display</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$display: (
+  none,
+  inline,
+  inline-block,
+  block,
+  table,
+  table-cell,
+  table-row,
+  flex,
+  inline-flex
+);</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="undefined-variable-side"><h3 class="item__heading"><a class="item__name" href="#variable-side">side</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$side: (
+  t: top,
+  b: bottom,
+  l: left,
+  r: right
+);</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="undefined-variable-spacer"><h3 class="item__heading"><a class="item__name" href="#variable-spacer">spacer</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$spacer: 1rem !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default spacing value.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="undefined-variable-spacing"><h3 class="item__heading"><a class="item__name" href="#variable-spacing">spacing</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$spacing: (
+  0: $spacer * 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer * 1,
+  4: $spacer * 1.5,
+  5: $spacer * 3
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Spacing modifiers.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="utils"><div class="container">utils</div></h1><section class="main__sub-section" id="utils-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="utils-css-.d"><h3 class="item__heading"><a class="item__name" href="#css-.d">.d</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.d {
+  @include breakpoint-each() {
+    @each $value in $display {
+      &amp;--#{$value} {
+        display: $value;
+      }
+    }
+  }
+}</code>" data-collapsed=".d { ... }"><code>.d { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-display"><code>display</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="utils-css-.j"><h3 class="item__heading"><a class="item__name" href="#css-.j">.j</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.j {
+  &amp;-items {
+    @include breakpoint-each() {
+      @each $value in $justify-items {
+        &amp;--#{$value} {
+          justify-items: $value;
+        }
+      }
+    }
+  }
+
+  &amp;-self {
+    @include breakpoint-each() {
+      @each $value in $justify-items {
+        &amp;--#{$value} {
+          justify-self: $value;
+        }
+      }
+    }
+  }
+
+  &amp;-content {
+    @include breakpoint-each() {
+      @each $value in $justify-content {
+        &amp;--#{$value} {
+          justify-content: $value;
+        }
+      }
+    }
+  }
+}</code>" data-collapsed=".j { ... }"><code>.j { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-justify-items"><code>justify-items</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-justify-content"><code>justify-content</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="utils-css-.a"><h3 class="item__heading"><a class="item__name" href="#css-.a">.a</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.a {
+  &amp;-items {
+    @include breakpoint-each() {
+      @each $value in $align-items {
+        &amp;--#{$value} {
+          align-items: $value;
+        }
+      }
+    }
+  }
+
+  &amp;-self {
+    @include breakpoint-each() {
+      @each $value in $align-items {
+        &amp;--#{$value} {
+          align-self: $value;
+        }
+      }
+    }
+  }
+
+  &amp;-content {
+    @include breakpoint-each() {
+      @each $value in $align-content {
+        &amp;--#{$value} {
+          align-content: $value;
+        }
+      }
+    }
+  }
+}</code>" data-collapsed=".a { ... }"><code>.a { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-align-items"><code>align-items</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-align-content"><code>align-content</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="utils-css-.m"><h3 class="item__heading"><a class="item__name" href="#css-.m">.m</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.m {
+  @each $s in (t, b, l, r) {
+    &amp;#{$s} {
+      @include breakpoint-each() {
+
+        @each $i,
+        $value in $spacing {
+          &amp;-#{$i} {
+            margin-#{map-get($side, $s)}: map-get($spacing, $i);
+          }
+        }
+
+        &amp;-auto {
+          margin-#{map-get($side, $s)}: auto;
+        }
+      }
+    }
+  }
+
+  &amp;x {
+    @include breakpoint-each() {
+
+      @each $i,
+      $value in $spacing {
+        &amp;-#{$i} {
+          margin-left: map-get($spacing, $i);
+          margin-right: map-get($spacing, $i);
+        }
+      }
+
+      &amp;-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &amp;y {
+    @include breakpoint-each() {
+
+      @each $i,
+      $value in $spacing {
+        &amp;-#{$i} {
+          margin-top: map-get($spacing, $i);
+          margin-bottom: map-get($spacing, $i);
+        }
+      }
+
+      &amp;-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+}</code>" data-collapsed=".m { ... }"><code>.m { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-spacing"><code>spacing</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-side"><code>side</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section><section class="main__item container item" id="utils-css-.p"><h3 class="item__heading"><a class="item__name" href="#css-.p">.p</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.p {
+  @each $s in (t, b, l, r) {
+    &amp;#{$s} {
+      @include breakpoint-each() {
+
+        @each $i,
+        $value in $spacing {
+          &amp;-#{$i} {
+            padding-#{map-get($side, $s)}: map-get($spacing, $i);
+          }
+        }
+      }
+    }
+  }
+
+  &amp;x {
+    @include breakpoint-each() {
+
+      @each $i,
+      $value in $spacing {
+        &amp;-#{$i} {
+          padding-left: map-get($spacing, $i);
+          padding-right: map-get($spacing, $i);
+        }
+      }
+    }
+  }
+
+  &amp;y {
+    @include breakpoint-each() {
+
+      @each $i,
+      $value in $spacing {
+        &amp;-#{$i} {
+          padding-top: map-get($spacing, $i);
+          padding-bottom: map-get($spacing, $i);
+        }
+      }
+    }
+  }
+}</code>" data-collapsed=".p { ... }"><code>.p { ... }</code></pre></div><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-spacing"><code>spacing</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-side"><code>side</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jasper Berghoef</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Grid</span><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
