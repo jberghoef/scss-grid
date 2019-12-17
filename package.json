@@ -1,5 +1,5 @@
 {
-  "name": "grid",
+  "name": "@jberghoef/scss-grid",
   "version": "1.0.0",
   "main": "src/js/main.js",
   "style": "src/js/main.js",
